@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%-include ('components/head', {title:"Add Content"})%> 
+
+
+<body class="d-flex flex-column justify-content-between"> 
+
+  <style>
+    html,body {
+      height: 100vh;
+    }
+  </style>
+
+  <%-include ('components/header')%> 
+  
+
+    <main clas>
+      <h1 class="fw-bold mb-0 fs-2 p-5 text-center">Add Link</h1>
+      
+      <div class="container p-5 pt-0 w-50">
+        <form action="/" method="post" >
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" id="floatingTitle" placeholder="Title" name="title"  value="<%=body.title%>" required>
+            <label for="floatingTitle">Title</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" id="floatingDescription" placeholder="Description" name="description"  value="<%=body.description%>">
+            <label for="floatingDescription">Description</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" id="floatingUrl" placeholder="URL" name="url"  value="<%=body.url%>" >
+            <label for="floatingUrl">URL</label>
+          </div>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Save</button>
+        </form>
+        <% if (error) { %>
+          <div class="alert alert-danger">
+            <strong>Error: </strong> <%=error.message%>
+          </div>
+          <% } %> 
+      </div>   
+    </main>
+
+  <%-include ('components/footer')%> 
+  
+
+</body>
+
+</html>
